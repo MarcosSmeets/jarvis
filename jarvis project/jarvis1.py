@@ -8,7 +8,7 @@ def talkToMe(audio):
     print(audio)
     tts = gTTS(text = audio, lang='en')
     tts.save('audio.mp3')
-    os.system('sapi5 audio.mp3')
+    os.system('mpn123 audio.mp3')
 
 #listem for commands
 
@@ -16,7 +16,7 @@ def myCommand():
     r = sr.Recognizer()
     with sr.Microphone() as source:
         print('I am ready for your next command')
-        r.pause_threshold = 1
+        r.pause_threshold = 3
         r.adjust_for_ambient_noise(source, duration = 1)
         audio = r.listem(source)
 
